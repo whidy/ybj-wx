@@ -1,0 +1,198 @@
+%intercept-filter{
+    position: absolute;
+    background-color: #fff;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    z-index: 1;
+
+    &.bg-top{
+        width: 100%;
+        top: 0;
+    }
+
+    &.bg-bottom{
+        width: 100%;
+        bottom: 0;
+    }
+
+    &.bg-right{
+       // top: 0;
+        right: 0;
+        //height: 100%;
+    }
+
+    &.bg-left{
+        left: 0;
+        //top: 0;
+        //height: 100%;
+    }
+}
+
+.intercept-preview{
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    .intercept-bg{
+        @extend %intercept-filter;
+        opacity: 1;
+    }
+
+    img{
+        position: absolute;
+    }
+}
+
+.intercept{
+    position: relative;
+    cursor: crosshair;
+
+    .intercept-target{
+        vertical-align: middle;
+    }
+
+    .intercept-bg{
+        @extend %intercept-filter;
+    }
+
+    .intercept-range{
+        position: absolute;
+        cursor: move;
+        top: 50%;
+        left: 50%;
+        z-index: 10000;
+        background-color: rgba(0,0,0,0);
+
+        // 这个是兼容ie
+        &:after{
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #fff;
+            opacity: 0;
+        }
+
+        .range,
+        .range-b{
+            position: absolute;
+        }
+
+        .range{
+            opacity: 0.5;
+            background-color: #333;
+            border: 1px #eee solid;
+            width: 7px !important;
+            height: 7px !important;
+            box-sizing: border-box;
+            z-index: 1000;
+        }
+
+        .range-1{
+            left: 0px;
+            margin-left: -4px;
+            margin-top: -4px;
+            top: 0px;
+            cursor: nw-resize;
+        }
+
+        .range-2{
+            cursor: n-resize;
+            left: 50%;
+            margin-left: -4px;
+            margin-top: -4px;
+            top: 0;
+        }
+
+        .range-3{
+            cursor: ne-resize;
+            margin-right: -4px;
+            margin-top: -4px;
+            right: 0;
+            top: 0;
+        }
+
+        .range-4{
+            cursor: e-resize;
+            margin-right: -4px;
+            margin-top: -4px;
+            right: 0;
+            top: 50%;
+        }
+
+        .range-5{
+            cursor: se-resize;
+            bottom: 0;
+            margin-bottom: -4px;
+            margin-right: -4px;
+            right: 0;
+        }
+
+        .range-6{
+            cursor: s-resize;
+            bottom: 0;
+            left: 50%;
+            margin-bottom: -4px;
+            margin-left: -4px;
+        }
+
+        .range-7{
+            cursor: sw-resize;
+            bottom: 0;
+            left: 0;
+            margin-bottom: -4px;
+            margin-left: -4px;
+        }
+
+        .range-8{
+            cursor: w-resize;
+            left: 0;
+            margin-left: -4px;
+            margin-top: -4px;
+            top: 50%;
+        }
+
+        .range-b1{
+            cursor: n-resize;
+            height: 7px;
+            width: 100%;
+            margin-top: -4px;
+            top: 0px;
+            left: 0px;
+        }
+
+        .range-b2{
+            cursor: e-resize;
+            height: 100%;
+            width: 7px;
+            margin-right: -4px;
+            right: 0;
+        }
+
+        .range-b3{
+            cursor: s-resize;
+            height: 7px;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            margin-bottom: -4px;
+        }
+
+        .range-b4{
+            cursor: w-resize;
+            height: 100%;
+            width: 7px;
+            margin-left: -4px;
+            top: 0px;
+            left: 0px;
+        }
+    }
+
+    // &.intercepting{
+    //     .intercept-range{
+    //         display: block;
+    //     }
+    // }
+}

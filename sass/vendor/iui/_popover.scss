@@ -1,0 +1,151 @@
+/**
+ * 对话框组件样式
+ */
+
+%tri-right {
+    &:before {
+        right: -11px;
+        @include triangle(20px, #d9dadc transparent, right, false);
+    }
+    &:after {
+        right: -10px;
+        @include triangle(20px, #fff transparent, right, false);
+    }
+}
+
+%tri-left {
+    &:before {
+        left: -11px;
+        @include triangle(20px, #d9dadc transparent, left, false);
+    }
+    &:after {
+        left: -10px;
+        @include triangle(20px, #fff transparent, left, false);
+    }
+}
+
+%tri-up {
+    &:before {
+        top: -11px;
+        @include triangle(20px, #d9dadc transparent, up, false);
+    }
+    &:after {
+        top: -10px;
+        @include triangle(20px, #fff transparent, up, false);
+    }
+}
+
+%tri-down {
+    &:before {
+        bottom: -11px;
+        @include triangle(20px, #d9dadc transparent, down, false);
+    }
+    &:after {
+        bottom: -10px;
+        @include triangle(20px, #fff transparent, down, false);
+    }
+}
+
+%hr-left {
+    &:before,
+    &:after {
+        left: 5px;
+    }
+}
+%hr-center {
+    &:before,
+    &:after {
+        left: 50%;
+        margin-left: -10px;
+    }
+}
+%hr-right {
+    &:before,
+    &:after {
+        right: 5px;
+    }
+}
+%vt-top {
+    &:before,
+    &:after {
+        top: 5px;
+    }
+}
+%vt-middle {
+    &:before,
+    &:after {
+        top: 50%;
+        margin-top: -10px;
+    }
+}
+%vt-bottom {
+    &:before,
+    &:after {
+        bottom: 5px;
+    }
+}
+
+.IUI-popover-container {
+    width: 300px;
+    background-color: #fff;
+    border: 1px #d9dadc solid;
+    position: absolute;
+    z-index: 999;
+    border-radius: 5px;
+    @include transition(all .3s ease-in);
+    &.popover-show {
+        @include prefixer(transform, translateY(5%)) opacity: 0;
+    }
+    &.popover-in {
+        opacity: 1;
+        @include prefixer(transform, translateY(0))
+    }
+    &:after,
+    &:before {
+        width: 0;
+        height: 0;
+        content: ' ';
+        position: absolute;
+    }
+
+    
+    // 如果你只是想修改小三角的样式，那就去改上面的placeholder吧！
+    // 请不要轻易动这个地方，否则我不保证你会不会绕晕 !
+    $direction:( up:down, right:left, down:up, left:right);
+    $vertical:top middle bottom;
+    $horizontal:left center right;
+
+    @each $item in $direction {
+        $key: nth($item, 1);
+        $value: nth($item, 2);
+        @if $key==up or $key==down {
+            @each $hr in $horizontal {
+                $i: index($horizontal, $hr);
+                $val: nth($horizontal, $i);
+                &.#{$key}-#{$val} {
+
+                    @extend %tri-#{$value};
+                    @extend %hr-#{$val}
+                }
+            }
+        }@else {
+            @each $vt in $vertical {
+                $i: index($vertical, $vt);
+                $val: nth($vertical, $i);
+                &.#{$key}-#{$val} {
+                    @extend %tri-#{$value};
+                    @extend %vt-#{$val}
+                }
+            }
+        }
+    }
+    @at-root{
+        .popover-header {
+        padding: 8px 14px;
+        margin: 0;
+        font-size: 14px;
+        border-bottom: 1px solid #ebebeb;
+        border-radius: 5px 5px 0 0;
+    }
+    }
+}

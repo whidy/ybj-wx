@@ -1,0 +1,11 @@
+.tabs-content {
+    display: none;
+}
+
+.tabs-content.active {
+    display: block;
+}
+
+.tabs-content.animate{
+    @include animation(iui-fadeIn .2s ease-in forwards);
+}

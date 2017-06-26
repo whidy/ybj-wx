@@ -1,0 +1,20 @@
+
+#message {
+    position: fixed;
+    color: #fff;
+    padding: 13px 20px 13px 15px;
+    text-align: left;
+    font-size: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    z-index: 99999;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    @include bgc-opacity(#000, .6);
+}
+
+#message span {
+    vertical-align: top;
+}
+

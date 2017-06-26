@@ -1,0 +1,73 @@
+// @import "../tool/index";
+// @import "../font-awesome/index";
+
+$iui-z-index:1000;
+
+$iui-z-index-layer-backdrop:$iui-z-index;
+$iui-z-index-layer:$iui-z-index + 1;
+
+$iui-z-index-loading-backdrop : $iui-z-index + 100;
+$iui-z-index-loading : $iui-z-index + 101;
+
+$iui-z-index-dialog-backdrop : $iui-z-index + 10;
+$iui-z-index-dialog : $iui-z-index + 11;
+
+$dialog-color:#333 #666;
+$dialog-header-font:bold 16px/1.2 "微软雅黑";
+$dialog-content-font:normal 14px/1.8 "微软雅黑";
+$dialog-footer-font:normal 18px/1.2 "微软雅黑";
+$dialog-width:400px;
+
+
+%backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: $iui-z-index;
+    // opacity: 0;
+    background: rgba(143,27,15,0.8);
+    @include transition(all 0.3s);
+    @include bgc-opacity(#000, .35);
+}
+
+@include keyframes (iui-fadeIn) {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@include keyframes (iui-fadeOut) {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.hide {
+    display: none;
+}
+
+@import 'alert';
+@import 'dialog';
+@import 'emailsuffix';
+@import 'idate';
+@import 'layer';
+@import 'loading';
+@import 'popover';
+@import 'tabs';
+// @import 'tokenize';
+// @import 'intercept';
+// @import 'slippage';
+@import 'pagination';
+@import 'tooltip';
+// @import 'inline-editor';
+// @import 'table';
+// @import 'tree';

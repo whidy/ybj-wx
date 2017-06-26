@@ -1,0 +1,40 @@
+.inlineEditor-toolbar {
+    position: absolute;
+    z-index: 3;
+    opacity: 1;
+    height: 43px;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    border-radius: 5px;
+    border: 1px solid #1C1C1B;
+    /* Bubble Shadows */
+    background: #1C1C1B;
+    transition: 0.15s ease-in-out;
+    -webkit-transition: 0.15s ease-in-out;
+    & .content>div{
+    	display: inline-block
+    }
+    button{
+    	width: 42px;
+    	height: 41px;
+    	display: inline-block;
+    	background-color: transparent;
+    	border: none;
+    	color: #fff;
+    }
+    button:hover{
+    	color: #ccc;
+    }
+    button:focus,button:active{
+    	color: #217CFF;
+    	outline: none;
+    }
+    &:after{
+    	content:' ';
+    	position: absolute;
+    	@include triangle(20px, #1C1C1B transparent, down, false);
+    	left: 50%;
+    	bottom:-11px;
+    }
+}

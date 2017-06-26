@@ -1,0 +1,56 @@
+.tooltip {
+    position: absolute;
+    padding: 5px 10px;
+    color: #fff;
+    opacity: 0;
+    border-radius: 3px;
+    @include bgc-opacity(#000, .7);
+
+
+    &.tooltip-left:after {
+        content: ' ';
+        position: absolute;
+        right: -5px;
+        top: 50%;
+        margin-top: -4px;
+        @include triangle(10px, #4c4c4c transparent, right, true);
+    }
+    &.tooltip-right:after {
+        content: ' ';
+        position: absolute;
+        left: -5px;
+        top: 50%;
+        margin-top: -4px;
+        @include triangle(10px, #4c4c4c transparent, left, true);
+    }
+
+    &.tooltip-up:after {
+        content: ' ';
+        position: absolute;
+        left: 50%;
+        bottom: -5px;
+        margin-left: -5px;
+        @include triangle(10px, #4c4c4c transparent, down, true);
+    }
+
+    &.tooltip-down:after {
+        content: ' ';
+        position: absolute;
+        left: 50%;
+        top: -5px;
+        margin-left: -5px;
+        @include triangle(10px, #4c4c4c transparent, up, true);
+    }
+
+
+    &.tooltip-small {
+        width: auto;
+    }
+    &.tooltip-large {
+        width: 30em;
+    }
+    &.tooltip-show {
+        opacity: 1;
+        @include transition(opacity .3s linear);
+    }
+}
