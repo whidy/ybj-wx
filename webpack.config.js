@@ -7,8 +7,8 @@ var px2rem = require('postcss-px2rem');
 
 var config = {
   entry: {
-    common : './js/index.js',
-    product : './js/page/product.js'
+    common: './js/index.js',
+    product: './js/page/product.js'
   },
   output: {
     filename: '[name].js',
@@ -20,16 +20,20 @@ var config = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: [{
-            loader: "css-loader"
-          }, {
-            loader: "px2rem-loader",
-            options: {
-              remUnit: 10 //设计稿宽度750px HTML基数10px 2倍大小
-            }
-          }, {
-            loader: "sass-loader"
-          }]
+          use: [
+            {
+              loader: "css-loader"
+            }, {
+              loader: "px2rem-loader",
+              options: {
+                remUnit: 10
+              }
+            }, {
+              loader: 'postcss-loader'
+            }, {
+              loader: "sass-loader"
+            },
+          ]
         })
       },
       {

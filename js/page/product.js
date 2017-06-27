@@ -1,26 +1,52 @@
 require('../../sass/page/product.scss');
-(function (doc, win) {
-  var docEl = doc.documentElement,
-    recalc = function () {
-      var clientWidth = docEl.clientWidth;
-      if (!clientWidth) return;
+require('../lib/rootFontSizeAdjust.js');
+require('swiper');
+var weui = require('../lib/weui.js');
+var $ = require('../lib/jquery-3.2.1.min.js');
 
-      docEl.style.fontSize = (clientWidth / 375 * 0.625) * 100 + '%';
-      docEl.style.display = "none";
-      docEl.clientWidth; // Force relayout - important to new Android devices
-      docEl.style.display = "";
-    };
+$(document).ready(function () {
+  //顶部焦点图
+  var hasPagination = $('.swiper-container .swiper-slide').length > 1 ? '.swiper-pagination' : '';
+  var swiper = new Swiper('.swiper-container', {
+    pagination: hasPagination,
+    paginationClickable: true
+  });
 
-  // Abort if browser does not support addEventListener
-  if (!doc.addEventListener) return;
+  //保险类型切换
+  weui.tab('#tab', {
+    defaultIndex: 0,
+    onChange: function (index) {
+      // console.log(index);
+    }
+  });
 
-  // Test rem support
-  var div = doc.createElement('div');
-  div.setAttribute('style', 'font-size: 1rem');
+  //帮你选功能
+  if ($('#Jhelper').length) {
+    $('#Jhelper').bind('click',function() {
+      $('.swipe-layer').addClass('swipe-layer-show');
+      $('body').css({
+        'height': $(window).height(),
+        'overflow': 'hidden'
+      })
+      $('.insurance-filter .btn-cancel').bind('click',function() {
+        $('.swipe-layer').removeClass('swipe-layer-show');
+        $('body').removeAttr('style');
+      })
+    })
+  }
 
-  // Abort if browser does not recognize rem
-  if (div.style.fontSize != "1rem") return;
+  if ($('#insuranceFilter').length) {
+    // 选择功能
+    $('.catigory-list').each(function (listIndex, listElem) {
+      $(listElem).find('li').each(function (itemIndex, itemElem) {
+        $(itemElem).bind('click', function () {
+          $(this).addClass('on');
+          $(this).siblings().removeClass('on');
+        })
+      })
+    });
+    // 提交
+    
 
-  win.addEventListener('resize', recalc, false);
-  doc.addEventListener('DOMContentLoaded', recalc, false);
-})(document, window);
+  }
+});
