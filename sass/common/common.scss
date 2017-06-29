@@ -137,9 +137,9 @@
   color: #fff;
   text-align: center;
   .icon-san::before {
-    height: 15px;
-    font-size: 15px;
-    margin: 3px auto 0;
+    height: 16px;
+    font-size: 16px;
+    margin: 3px auto -1px;
     color: #fff;
     display: block;
   }
@@ -247,6 +247,14 @@
   border-radius: 3px;
   text-align: center;
   font-size: 18px;
+  border: 0;
+  display: inline-block;
+}
+.btn-medium {
+  width:168px;
+}
+.weui-btn:not(.btn-disable):active {
+    color: hsla(0,0%,100%,.6);
 }
 
 .btn-cancel {
@@ -260,14 +268,14 @@
 }
 
 //滑动层帮你选
-.swipe-layer {
+.insurance-filter-swipe {
   position: fixed;
   width: 100%;
   height: 100%;
   z-index: 1000;
   top: 0;
   left:0;
-  transform:translateX(100%);
+  transform:translateY(100%);
   transition: 0.5s;
   .overlay {
     background: rgba(0, 0, 0, 0.4);
@@ -282,10 +290,14 @@
     position: absolute;
     bottom: 0;
     left: 0;
+    height: 84%;
+    min-height: 480px;
+    max-height: 520px;
+    overflow-y: auto;
   }
-  &.swipe-layer-show {
+  &.insurance-filter-swipe-show {
     right: 0;
-    transform:translateX(0);
+    transform:translateY(0);
     transition: 0.5s;
   }
 }
@@ -303,9 +315,31 @@
 
 
 
-.head-title {
+
+
+// 显示结果区域
+.result-page {
   text-align: center;
-  .icon-yuyue {
-    font-size: 42px;
+  padding:0 36px;
+  background-color: #fff;
+  .icon {
+    font-size: 44px;
+    line-height: 44px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .icon-zhengque {
+    color: #76CAA4;
+  }
+  .icon-wen {
+    color: $primary-color;
+  }
+  .txts {
+    font-size: 14px;
+    line-height: 22px;
+    color: nth($text-color,2);
+  }
+  .btn {
+    margin-top:25px;
   }
 }

@@ -8,7 +8,8 @@ var px2rem = require('postcss-px2rem');
 var config = {
   entry: {
     common: './js/index.js',
-    product: './js/page/product.js'
+    product: './js/page/product.js',
+    consult: './js/page/consult.js'
   },
   output: {
     filename: '[name].js',
@@ -56,7 +57,8 @@ var config = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("[name].css"),
+    // new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin("[name].css")
     // new HtmlWebpackPlugin({
     //   template: './src/index.html',
     //   filename: 'index.html',

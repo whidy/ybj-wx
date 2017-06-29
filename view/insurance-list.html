@@ -20,7 +20,7 @@
         <li class="weui-navbar__item"><a class="tabs-item" href="javascript:;" data-ajax="" data-type="peopleAdult">成人</a></li>
         <li class="weui-navbar__item"><a class="tabs-item" href="javascript:;" data-ajax="" data-type="peopleChild">少儿</a></li>
         <li class="weui-navbar__item"><a class="tabs-item" href="javascript:;" data-ajax="" data-type="peopleOld">老人</a></li>
-        <li class="jswipelayershow"><a class="tabs-item">筛选<i class="icon iconfont-prod icon-loud"></i></a></li>
+        <li class="jswipelayershow" data-help="false"><a class="tabs-item">筛选<i class="icon iconfont-prod icon-loud"></i></a></li>
       </ul>
       <div class="weui-tab__panel">
         <div class="weui-tab__content" id="peopleAll">
@@ -208,38 +208,43 @@
     </div>
     <div class="btm-tips"><span class="txt">我是有底线的</span></div>
     <!--帮你选默认隐藏-->
-    <div class="helper" id="Jhelper"><i class="icon iconfont-prod icon-san"></i><span>帮你选</span></div>
-    <div class="swipe-layer">
+    <div class="helper" id="Jhelper" data-help="true"><i class="icon iconfont-prod icon-san"></i><span>帮你选</span></div>
+    <div class="insurance-filter-swipe" id="JinsuranceFilterSwipe">
       <div class="overlay"></div>
-      <div class="insurance-filter" id="insuranceFilter">
-        <div class="box box-filter">
-          <div class="hd"><i class="icon iconfont-prod icon-fenlei"></i>保险分类</div>
-          <div class="bd">
-            <ul class="catigory-list list-col-3">
-              <li class="on"><a href="javascript:;">全部</a></li>
-              <li><a href="javascript:;">重疾险</a></li>
-              <li><a href="javascript:;">健康医疗</a></li>
-              <li><a href="javascript:;">寿险</a></li>
-              <li><a href="javascript:;">少儿教育金</a></li>
-              <li><a href="javascript:;">养老保险</a></li>
-              <li><a href="javascript:;">其他保险</a></li>
-            </ul>
+      <div class="insurance-filter-wrap">
+        <div class="insurance-filter" id="insuranceFilter">
+          <div class="box box-filter">
+            <div class="hd"><i class="icon iconfont-prod icon-fenlei"></i>保险分类</div>
+            <div class="bd">
+              <ul class="catigory-list list-col-3">
+                <li class="on"><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">重疾险</a></li>
+                <li><a href="javascript:;">健康医疗</a></li>
+                <li><a href="javascript:;">寿险</a></li>
+                <li><a href="javascript:;">少儿教育金</a></li>
+                <li><a href="javascript:;">养老保险</a></li>
+                <li><a href="javascript:;">其他保险</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="box box-filter">
-          <div class="hd"><i class="icon iconfont-prod icon-people"></i>保障对象</div>
-          <div class="bd">
-            <ul class="catigory-list list-col-3">
-              <li class="on"><a href="javascript:;">全部</a></li>
-              <li><a href="javascript:;">少儿</a></li>
-              <li><a href="javascript:;">老人</a></li>
-              <li><a href="javascript:;">成年</a></li>
-            </ul>
+          <div class="box box-filter">
+            <div class="hd"><i class="icon iconfont-prod icon-people"></i>保障对象</div>
+            <div class="bd">
+              <ul class="catigory-list list-col-3">
+                <li class="on"><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">少儿</a></li>
+                <li><a href="javascript:;">老人</a></li>
+                <li><a href="javascript:;">成年</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        <div class="btn-wrap">
-          <a href="javascript:;" class="btn btn-cancel">取消</a>
-          <a href="javascript:;" class="btn btn-okay">确定</a>
+          <div class="btn-wrap">
+            <a href="javascript:;" class="btn btn-cancel">取消</a>
+            <a href="javascript:;" class="btn btn-okay">确定</a>
+          </div>
+          <div class="asking">
+            <span>请专业顾问帮忙<i class="icon iconfont-prod icon-help"></i></span>
+          </div>
         </div>
       </div>
     </div>

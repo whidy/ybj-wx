@@ -1,6 +1,6 @@
 @import '../common/_configuration.scss';
-@import '../common/common.scss';
 @import '../browser/_reset.scss';
+@import '../common/common.scss';
 @import '../vendor/swiper.css';
 @import '../vendor/weui.min.css';
 .swiper-container {
@@ -58,6 +58,7 @@
 }
 
 .weui-tab {
+  padding-top:45px;
   .weui-navbar {
     height: 45px;
     background-color: #fff;
@@ -77,10 +78,17 @@
     .weui-bar__item_on {
       background-color: #fff;
       a {
-        line-height: 42px;
         border-bottom: 3px solid $primary-color;
       }
     }
+  }
+  .weui-navbar-fixed {
+    position: fixed;
+    top:0;
+    left:0;
+  }
+  .weui-tab__panel {
+    padding-top:0;
   }
 }
 

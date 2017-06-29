@@ -1,0 +1,150 @@
+@import '../common/_configuration.scss';
+@import '../browser/_reset.scss';
+@import '../common/common.scss';
+@import '../vendor/weui.min.css';
+.head-title {
+  background-color: #fff;
+  text-align: center;
+  padding: 34px 0 28px;
+  p {
+    font-size: 16px;
+    color: nth($text-color, 4)
+  }
+}
+
+.icon-yuyue {
+  font-size: 44px;
+  line-height: 44px;
+  margin-bottom: 18px;
+  display: block;
+  &::before {
+    color: $primary-color;
+  }
+}
+
+.form {
+  .form-hd {
+    padding: 10px 15px;
+    span {
+      border-left: 3px solid $primary-color;
+      padding-left: 10px;
+      font-size: 14px;
+    }
+  }
+  .form-bd {
+    background-color: #fff;
+    padding: 0 15px;
+  }
+  .form-ft {
+    border-top: 1px solid $border-color;
+    .btn {
+      margin-top: 30px;
+      width: 345px;
+      height: 45px;
+      display: block;
+    }
+  }
+}
+
+.form-group {
+  border-top: 1px solid $border-color;
+  height: 44px;
+  &:first-child {
+    border-top: 0;
+  }
+  input {
+    width: 100%;
+    -webkit-appearance: none;
+    background-color: transparent;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    border: 0;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 2px;
+    color: nth($text-color, 2);
+    &::placeholder {
+      color: nth($text-color, 3);
+    }
+  }
+}
+
+.form-group-select {
+  select {
+    border: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    option {
+      color: nth($text-color, 2);
+    }
+  }
+}
+
+.insurance-summary {
+  height: 118px;
+  padding: 20px 15px;
+  overflow: hidden;
+  background-color: #fff;
+  img {
+    margin-right: 10px;
+    width: 150px;
+    height: 78px;
+  }
+  .txts {
+    width: 185px;
+    .name {
+      font-size: 16px;
+      line-height: 18px;
+    }
+    .tagname {
+      padding: 0 9px 2px;
+      height: 20px;
+      line-height: 18px;
+      border: 1px solid transparent;
+      font-size: 11px;
+      border-radius: 3px;
+      margin: 10px 10px 0 0;
+      float: left;
+      &.tagcolor-1 {
+        color: $primary-color;
+        border-color: $primary-color;
+      }
+      &.tagcolor-2 {
+        color: #7D90BB;
+        border-color: #7D90BB;
+      }
+      &.tagcolor-3 {
+        color: #76CAA4;
+        border-color: #76CAA4;
+      }
+      &.tagcolor-4 {
+        color: #FFA61A;
+        border-color: #FFA61A;
+      }
+    }
+  }
+}
+
+
+
+.weui-toptips {
+  display: none;
+  position: fixed;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  z-index: 5000;
+  word-wrap: break-word;
+  word-break: break-all
+}
+
+.weui-toptips_warn {
+  background-color: $primary-color;
+}

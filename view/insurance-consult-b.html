@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <link rel="stylesheet" type="text/css" href="/dist/consult.css">
+  <title>预约咨询</title>
+  <script>
+    var prodId = ''; //开发传ID.这个是没有产品的就为空
+  </script>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <!--<div class="result-page"><i class="icon iconfont-prod icon-zhengque"></i><p class="txts">你的咨询预约已成功提交<br>专业顾问将很快与你联系，请保持手机通话顺畅！</p><a href="#" class="btn btn-okay">查看更多产品</a></div>-->
+    <div class="head-title">
+      <i class="icon iconfont-prod icon-yuyue"></i>
+      <p>快速预约，一对一专业解答</p>
+    </div>
+    <div class="form" id="Jform" action="">
+      <div class="form-hd"></div>
+      <div class="form-bd">
+        <div class="form-group">
+          <input type="text" class="form-control" name="name" maxlength="10" required pattern="REG_NAME" placeholder="称呼" emptyTips="请输入称呼"
+            notMatchTips="请输入正确的称呼" value="小白">
+        </div>
+        <div class="form-group">
+          <input type="tel" class="form-control" name="mobile" maxlength="11" required pattern="REG_MOBILE" placeholder="手机号" emptyTips="请输入手机号"
+            notMatchTips="请输入正确的手机号" value="18680222005">
+        </div>
+        <div class="form-group form-group-select">
+          <select class="form-control" name="contacttime" required tips="请选择你方便的联系时段">
+              <option value="" disabled selected>请选择你方便的联系时段</option>
+              <option value="上午8:00-12:00">上午8:00-12:00</option>
+              <option value="下午12:00-18:00">下午12:00-18:00</option>
+              <option value="下午18:00-23:00">下午18:00-23:00</option>
+            </select>
+        </div>
+        <div class="form-group form-group-select">
+          <select class="form-control" name="contacttype" required tips="请选择保障类型">
+              <option value="" disabled selected>请选择保障类型</option>
+              <option value="意外保险">意外保险</option>
+              <option value="重疾保险">重疾保险</option>
+              <option value="寿险">寿险</option>
+              <option value="其他blabla">其他blabla</option>
+            </select>
+        </div>
+      </div>
+      <div class="form-ft">
+        <a href="javascript:;" class="btn btn-okay" id="JsubmitConsult">马上预约</a>
+      </div>
+    </div>
+  </div>
+  <!--<div class="result-page result-success">
+    <i class="icon iconfont-prod icon-zhengque"></i>
+    <p class="txts">你的咨询预约已成功提交</br>专业顾问将很快与你联系，请保持手机通话顺畅！</p>
+  </div>-->
+  <script src="/dist/consult.js"></script>
+</body>
+
+</html>
