@@ -1,6 +1,8 @@
-@import '../common/_configuration.scss';
-@import '../browser/_reset.scss';
-@import '../common/common.scss';
+// V1.1
+
+@import '../common/configuration';
+@import '../browser/reset';
+@import '../common/common';
 // reset
 a:hover {
   text-decoration: none;

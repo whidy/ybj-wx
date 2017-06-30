@@ -13,7 +13,9 @@
   ],
   "author": "whidy",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "vanilla-lazyload": "^7.2.1"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "css-loader": "^0.28.4",

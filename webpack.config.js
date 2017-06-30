@@ -8,8 +8,8 @@ var px2rem = require('postcss-px2rem');
 var config = {
   entry: {
     common: './js/index.js',
-    product: './js/page/product.js',
-    consult: './js/page/consult.js'
+    insurance: './js/page/insurance.js',
+    loan: './js/page/loan.js'
   },
   output: {
     filename: '[name].js',

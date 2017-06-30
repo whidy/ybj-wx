@@ -1,0 +1,308 @@
+// 顶部swipe
+.swiper-container {
+  width: 375px;
+  height: 170px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+//产品列表样式
+.prod-list {
+  width: 355px;
+  margin: 0 auto;
+  li {
+    background-color: #fff;
+    width: 355px;
+    height: 218px;
+    border-radius: 5px;
+    overflow: hidden;
+    .img-wrap {
+      position: relative;
+      img {
+        width: 355px;
+        height: 160px;
+      }
+      .tag-type {
+        position: absolute;
+        top: 25px;
+        left: 0;
+        height: 25px;
+        line-height: 25px;
+        padding: 0 9px;
+        background-color: $primary-color;
+        font-size: 14px;
+        color: #fff;
+        border-radius: 0 13px 13px 0;
+      }
+    }
+    .txt-wrap {
+      padding: 8px 10px 9px;
+      .txt-head {
+        overflow: hidden;
+      }
+      .title {
+        font-size: 16px;
+        height: 21px;
+        line-height: 21px;
+        color: nth($text-color, 1);
+      }
+      .price {
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        color: $primary-color;
+        &::before {
+          margin-right: 3px;
+        }
+        &::after {
+          content: '起';
+          font-size: 12px;
+          color: #BEBEBE;
+          padding-left: 3px;
+        }
+      }
+      .txt-sub {
+        font-size: 12px;
+        line-height: 20px;
+        color: nth($text-color, 3);
+      }
+    }
+  }
+}
+
+//产品详情页
+.prodPic {
+  height: 195px;
+  width: 375px;
+  overflow: hidden;
+  img {
+    width: 457px;
+    height: 195px;
+    margin-left: -41px;
+  }
+}
+
+.weui-tab-prod {
+  padding-bottom: 50px;
+}
+
+.box-2 {
+  margin-top: 10px;
+  padding: 0 15px 17px;
+  background-color: #fff;
+  border-bottom: 1px solid $border-color;
+  .hd {
+    font-size: 14px;
+    line-height: 24px;
+    padding: 18px 0 6px;
+    color: nth($text-color, 1);
+  }
+}
+
+//表示2列的表格样式 A
+.table-2-a {
+  .row {
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 25px;
+  }
+  .col-1 {
+    width: 76px;
+    float: left;
+    color: nth($text-color, 3);
+  }
+  .col-2 {
+    width: 269px;
+    float: left;
+    color: nth($text-color, 2);
+  }
+}
+
+// 底部咨询小提示
+.asking {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: #F6F6F6;
+  font-size: 16px;
+  text-align: center;
+  border-top: 1px solid $border-color;
+  .icon-help {
+    font-size: 18px;
+    margin-left: 5px;
+    color: $primary-color;
+  }
+  .icon-wen {
+    font-size: 25px;
+    padding: 0 15px;
+    color: $primary-color;
+    border-right: 1px solid $border-color;
+  }
+  .weui-flex a {
+    font-size: 18px;
+    line-height: 50px;
+    display: inline-block;
+    &.weui-flex__item:nth-child(2) {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+}
+
+//列表数据没有提示样式
+.btm-tips {
+  text-align: center;
+  margin: 30px 40px;
+  height: 24px;
+  padding-bottom: 12px;
+  &::after {
+    content: '';
+    border-bottom: 1px solid $border-color;
+    display: block;
+    margin-top: -12px;
+  }
+  .txt {
+    font-size: 13px;
+    height: 24px;
+    line-height: 24px;
+    color: nth($text-color, 3);
+    display: inline-block;
+    background-color: $bg-color;
+    padding: 0 8px;
+  }
+}
+
+//帮你选
+.helper {
+  width: 46px;
+  height: 46px;
+  border-radius: 46px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $primary-color;
+  box-shadow: 0 3px 8px 0 #F9A69C;
+  color: #fff;
+  text-align: center;
+  .icon-san::before {
+    height: 16px;
+    font-size: 16px;
+    margin: 3px auto -1px;
+    color: #fff;
+    display: block;
+  }
+  span {
+    font-size: 10px;
+    line-height: 14px;
+  }
+}
+
+
+
+
+//滑动层帮你选
+.insurance-filter-swipe {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  transform: translateY(100%);
+  transition: 0.5s;
+  .overlay {
+    background: rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .insurance-filter {
+    background-color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 84%;
+    min-height: 480px;
+    max-height: 520px;
+    overflow-y: auto;
+  }
+  &.insurance-filter-swipe-show {
+    right: 0;
+    transform: translateY(0);
+    transition: 0.5s;
+  }
+}
+
+.jswipelayershow {
+  width: 70px;
+  height: 45px;
+  line-height: 42px;
+  font-size: 16px;
+  text-align: center;
+  margin-right: 10px;
+  .icon-loud {
+    margin-left: 6px;
+  }
+}
+
+// 切换
+.weui-tab {
+  padding-top: 45px;
+  .weui-navbar {
+    height: 45px;
+    background-color: #fff; // padding:0 15px;
+    .weui-navbar__item {
+      padding: 0;
+      &::after {
+        border: 0;
+      }
+      a {
+        font-size: 16px;
+        display: inline-block;
+        vertical-align: top;
+        line-height: 42px;
+        border-bottom: 3px solid #fff;
+      }
+    }
+    .weui-bar__item_on {
+      background-color: #fff;
+      a {
+        border-bottom: 3px solid $primary-color;
+      }
+    }
+  }
+  .weui-navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .weui-tab__panel {
+    padding-top: 0;
+  }
+}
+
+.weui-tab-prod .weui-tab__content {
+  .content-wrap {
+    padding: 15px;
+    img {
+      width: 345px;
+      height: auto;
+    }
+  }
+}

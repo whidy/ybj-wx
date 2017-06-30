@@ -1,0 +1,41 @@
+.btn-wrap {
+  display: flex;
+  padding: 0 15px 15px;
+  margin-top: 5px;
+  .btn {
+    flex: 1;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+}
+
+.btn {
+  height: 40px;
+  line-height: 40px;
+  width: 167.5px;
+  margin-left: 10px;
+  border-radius: 3px;
+  text-align: center;
+  font-size: 18px;
+  border: 0;
+  display: inline-block;
+}
+
+.btn-medium {
+  width: 168px;
+}
+
+.weui-btn:not(.btn-disable):active {
+  color: hsla(0, 0%, 100%, .6);
+}
+
+.btn-cancel {
+  background-color: #F0F0F0;
+  color: nth($text-color, 3);
+}
+
+.btn-okay {
+  background-color: $primary-color;
+  color: #fff;
+}

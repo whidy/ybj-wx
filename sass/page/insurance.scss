@@ -1,0 +1,119 @@
+@import '../common/configuration';
+@import '../browser/reset';
+@import '../vendor/swiper';
+@import '../vendor/weui';
+@import '../common/iconfont-product';
+@import '../common/product';
+@import '../common/consult';
+@import '../common/btn';
+
+
+.top-entry {
+  border-bottom: 1px solid #ECECEC;
+  display: flex;
+  background-color: #fff;
+  .item {
+    &:first-child {
+      border-left: 0;
+    }
+    display: block;
+    padding:16px 15px;
+    border-left:1px solid #ECECEC;
+    position: relative;
+    i {
+      position:absolute;
+      right:15px;
+      top:20px;
+    }
+  }
+  .title {
+    width: 110px;
+    font-size: 14px;
+    height: 21px;
+    line-height: 21px;
+    color: #333;
+    display: block;
+  }
+  .title-sub {
+    color: #999;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    margin-top:5px;
+    display: block;
+  }
+}
+// 其他图
+.icon-zx,
+.icon-xz {
+  width: 34px;
+  height: 36px;
+  float: right;
+  background: url(../../images/zx.png) no-repeat 0 0;
+  background-size: contain;
+}
+
+.icon-xz {
+  background-image: url(../../images/xz.png);
+}
+
+//快速选保险
+.box {
+  padding: 15px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  .hd {
+    margin: 9px 0 2px;
+    height: 15px;
+    line-height: 15px;
+    font-size: 15px;
+    color: nth($text-color, 4);
+    .icon {
+      margin-right: 8px;
+    }
+  }
+  .bd {
+    overflow: hidden;
+  }
+}
+
+.list-col-3 {
+  li {
+    width: 108px;
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+    border: 1px solid $border-color;
+    text-align: center;
+    color: nth($text-color, 2);
+    float: left;
+    margin-right: 10.5px;
+    border-radius: 3px;
+    margin-top: 15px;
+    overflow: hidden;
+    a {
+      font-size: 14px;
+    }
+    &:nth-child(3n) {
+      margin-right: 0;
+    }
+    &.on {
+      border-color: $primary-color;
+      position: relative;
+      a {
+        color: $primary-color;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -12px;
+        right: 0;
+        width: 0;
+        height: 0;
+        border-width: 12px;
+        border-style: solid;
+        border-color: transparent $primary-color transparent transparent;
+      }
+    }
+  }
+}
