@@ -299,10 +299,23 @@
 
 .weui-tab-prod .weui-tab__content {
   .content-wrap {
-    padding: 15px;
+    padding: 15px 0;
     img {
-      width: 345px;
-      height: auto;
+      width: 375px;
+      min-height: 375px;
     }
+  }
+}
+
+
+//产品详情的图片显示lazy相关
+//for lazyload image
+img:not([src]) {
+  visibility: hidden;
+}
+/* Fixes Firefox anomaly during image load */
+@-moz-document url-prefix() {
+  img:-moz-loading {
+    visibility: hidden;
   }
 }

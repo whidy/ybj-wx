@@ -16,9 +16,79 @@
 </head>
 
 <body>
+  <style>
+    ul,
+    li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    a,
+    img {
+      display: block;
+    }
+
+    img {
+      border: 0;
+    }
+
+    img:not([src]) {
+      visibility: hidden;
+    }
+    /* Fixes Firefox anomaly during image load */
+
+    @-moz-document url-prefix() {
+      img:-moz-loading {
+        visibility: hidden;
+      }
+    }
+  </style>
+  <!--<div id="results1" class="results">
+    <img alt="Stivaletti" data-original="../img/44721746JJ_15_a.jpg" width="220" height="280">
+    <img alt="Open toe" data-original="../img/44740806JX_15_r.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis" data-original="../img/44735977GR_15_a.jpg" width="220" height="0">
+    <img alt="Sneakers &amp; Tennis shoes basse" data-original="../img/44738717AM_15_a.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis shoes alte" data-original="../img/44739940CB_15_a.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis shoes alte" data-original="../img/44740860XG_15_a.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis shoes basse" data-original="../img/44738719VN_15_a.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis shoes basse" data-original="../img/44739938WK_15_a.jpg" width="220" height="280">
+    <img alt="Stivali" data-original="../img/44736534FQ_15_a.jpg" width="220" height="280">
+    <img alt="Stivali" data-original="../img/44735388UI_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44739165EV_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44739454HF_15_a.jpg" width="220" height="280">
+    <img alt="Stivali" data-original="../img/44719480KM_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44719687TD_15_a.jpg" width="220" height="280">
+    <img alt="Décolleté" data-original="../img/44721899NG_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44721744SL_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44716730KR_15_a.jpg" width="220" height="280">
+    <img alt="Décolleté" data-original="../img/44718734XL_15_a.jpg" width="220" height="280">
+    <img alt="Décolleté" data-original="../img/44721796UK_15_a.jpg" width="220" height="280">
+    <img alt="Francesine" data-original="../img/44717679MJ_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44724594VU_15_a.jpg" width="220" height="280">
+    <img alt="Décolleté" data-original="../img/44726148AQ_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44719629NT_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44725329KQ_15_a.jpg" width="220" height="280">
+    <img alt="Stivali" data-original="../img/44724026QS_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44720256GW_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44722062ID_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44722402RH_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44726296VU_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44725755CT_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44725348NV_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44721879XX_15_a.jpg" width="220" height="280">
+    <img alt="Cuissardes" data-original="../img/44729472IQ_15_a.jpg" width="220" height="280">
+    <img alt="Décolleté" data-original="../img/44725388JV_15_a.jpg" width="220" height="280">
+    <img alt="Stivaletti" data-original="../img/44721854CE_15_a.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis shoes basse" data-original="../img/44727750JP_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44727501HH_15_a.jpg" width="220" height="280">
+    <img alt="Sneakers &amp; Tennis shoes basse" data-original="../img/44727038AQ_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44704882BQ_15_a.jpg" width="220" height="280">
+    <img alt="Mocassini" data-original="../img/44734002VC_15_a.jpg" width="220" height="280">
+  </div>-->
   <div class="container" id="container">
     <div class="prodPic">
-      <img src="//lorempixel.com/710/320" alt="">
+      <img data-original="//lorempixel.com/710/320" alt="">
     </div>
 
     <div class="prod-summary mt-10">
@@ -29,7 +99,6 @@
         </div>
       </div>
     </div>
-
     <div class="box-2">
       <div class="hd">保障范围</div>
       <div class="bd">
@@ -50,32 +119,44 @@
         <li class="weui-navbar__item"><a class="tabs-item" href="javascript:;" data-ajax="" data-type="procedure">理赔流程</a> </li>
       </ul>
       <div class="weui-tab__panel">
-        <div class="weui-tab__content" id="detail">
+        <div class="weui-tab__content" id="detail" style="display:block;">
           <div class="content-wrap">
-            <img src="//lorempixel.com/690/320" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" src2="//lorempixel.com/690/820" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" src2="//lorempixel.com/690/520" alt="">
+            <img data-original="//lorempixel.com/750/920" alt="">
+            <img data-original="//lorempixel.com/750/820" alt="">
+            <img data-original="//lorempixel.com/750/1020" alt="">
+            <img data-original="//lorempixel.com/750/950" alt="">
+            <img data-original="//lorempixel.com/750/910" alt="">
+            <img data-original="//lorempixel.com/750/925" alt="">
           </div>
         </div>
-        <div class="weui-tab__content" id="peopleAdult">
+        <div class="weui-tab__content" id="respon">
           <div class="content-wrap">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/328" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/922" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/721" alt="">
+            <img data-original="//lorempixel.com/750/920" alt="">
+            <img data-original="//lorempixel.com/750/820" alt="">
+            <img data-original="//lorempixel.com/750/1020" alt="">
+            <img data-original="//lorempixel.com/750/950" alt="">
+            <img data-original="//lorempixel.com/750/910" alt="">
+            <img data-original="//lorempixel.com/750/925" alt="">
           </div>
         </div>
-        <div class="weui-tab__content" id="peopleChild">
+        <div class="weui-tab__content" id="case">
           <div class="content-wrap">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/324" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/422" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/720" alt="">
+            <img data-original="//lorempixel.com/750/920" alt="">
+            <img data-original="//lorempixel.com/750/820" alt="">
+            <img data-original="//lorempixel.com/750/1020" alt="">
+            <img data-original="//lorempixel.com/750/950" alt="">
+            <img data-original="//lorempixel.com/750/910" alt="">
+            <img data-original="//lorempixel.com/750/925" alt="">
           </div>
         </div>
-        <div class="weui-tab__content" id="peopleOld">
+        <div class="weui-tab__content" id="procedure">
           <div class="content-wrap">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/420" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/340" alt="">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAAA1BMVEUAAACnej3aAAAAAXRSTlMAQObYZgAAAApJREFUCNdjYAAAAAIAAeIhvDMAAAAASUVORK5CYII=" #src="//lorempixel.com/690/220" alt="">
+            <img data-original="//lorempixel.com/750/920" alt="">
+            <img data-original="//lorempixel.com/750/820" alt="">
+            <img data-original="//lorempixel.com/750/1020" alt="">
+            <img data-original="//lorempixel.com/750/950" alt="">
+            <img data-original="//lorempixel.com/750/910" alt="">
+            <img data-original="//lorempixel.com/750/925" alt="">
           </div>
         </div>
       </div>

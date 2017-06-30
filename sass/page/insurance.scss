@@ -7,7 +7,6 @@
 @import '../common/consult';
 @import '../common/btn';
 
-
 .top-entry {
   border-bottom: 1px solid #ECECEC;
   display: flex;
@@ -21,9 +20,9 @@
     border-left:1px solid #ECECEC;
     position: relative;
     i {
-      position:absolute;
-      right:15px;
-      top:20px;
+      position: absolute;
+      right: 15px;
+      top: 20px;
     }
   }
   .title {
@@ -39,10 +38,11 @@
     font-size: 12px;
     height: 12px;
     line-height: 12px;
-    margin-top:5px;
+    margin-top: 5px;
     display: block;
   }
 }
+
 // 其他图
 .icon-zx,
 .icon-xz {

@@ -1,14 +1,13 @@
 require('../../sass/page/insurance.scss');
 require('../lib/rootFontSizeAdjust.js');
 require('swiper');
-// var LazyLoad = require('vanilla-lazyload');
-var Lazy = require('../lib/lazyimg.js');
+var LazyLoad = require('vanilla-lazyload');
 var weui = require('../lib/weui.js');
 var $ = require('../lib/jquery-3.2.1.js');
 var isLogin = require('../common/isLogin.js'); //理论上是布尔值
 var queryParamVal = require('../common/queryParamVal.js');
-
 $(document).ready(function () {
+
   //顶部焦点图
   var hasPagination = $('.swiper-container .swiper-slide').length > 1 ? '.swiper-pagination' : '';
   var swiper = new Swiper('.swiper-container', {
@@ -112,38 +111,30 @@ $(document).ready(function () {
     console.log('提交');
   })
 
+
   //产品详情页相关 
   //切换
   var insurContTab = weui.tab('#insurContTab', {
     defaultIndex: 0,
     onChange: function (index) {
-      replceSrc(this, '#src');
+      new LazyLoad();
     }
   });
 
   //lazyload
-  function replceSrc(target, type) {
-    var imgs = target.getElementsByTagName("img");
-    if (!imgs)
-      return;
-    for (var i = 0, len = imgs.length; i < len; i++) {
-      var img = imgs[i];
-      if (img.getAttribute(type) && !img.getAttribute('loaded')) {
-        img.src = img.getAttribute(type);
-        img.setAttribute('loaded', 'true')
-      }
-    }
-  }
-  var pclazy = Lazy.create({
-    lazyId: 'container',
-    trueSrc: "src2",
-    offset: 100,
-    delay: 100,
-    delay_tot: 1000
-  });
-  Lazy.init(pclazy);
-  // var myLazyLoad = new LazyLoad({
-  //   container: document.getElementById('insurContTab')
+	new LazyLoad();
+	
+  // var myLazyLoad1 = new LazyLoad({
+  //   container: document.getElementById('detail')
+  // });
+  // var myLazyLoad1 = new LazyLoad({
+  //   container: document.getElementById('respon')
+  // });
+  // var myLazyLoad1 = new LazyLoad({
+  //   container: document.getElementById('case')
+  // });
+  // var myLazyLoad1 = new LazyLoad({
+  //   container: document.getElementById('procedure')
   // });
 
 
