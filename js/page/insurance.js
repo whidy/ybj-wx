@@ -1,8 +1,6 @@
 require('../../sass/page/insurance.scss');
 require('../lib/rootFontSizeAdjust.js');
 require('swiper');
-// var LazyLoad = require('vanilla-lazyload');
-var Lazy = require('../lib/lazyimg.js');
 var weui = require('../lib/weui.js');
 var $ = require('../lib/jquery-3.2.1.js');
 var isLogin = require('../common/isLogin.js'); //理论上是布尔值
@@ -117,7 +115,12 @@ $(document).ready(function () {
   var insurContTab = weui.tab('#insurContTab', {
     defaultIndex: 0,
     onChange: function (index) {
-      replceSrc(this, '#src');
+      replceSrc($('#insurContTab .weui-tab__content')[index], 'src2');
+      $('html, body').animate({
+        scrollTop: $('#insurContTab').offset().top
+      }, 300);
+      // console.log($('#insurContTab'));
+      
     }
   });
 
@@ -134,19 +137,6 @@ $(document).ready(function () {
       }
     }
   }
-  var pclazy = Lazy.create({
-    lazyId: 'container',
-    trueSrc: "src2",
-    offset: 100,
-    delay: 100,
-    delay_tot: 1000
-  });
-  Lazy.init(pclazy);
-  // var myLazyLoad = new LazyLoad({
-  //   container: document.getElementById('insurContTab')
-  // });
-
-
 
   // 预约保险咨询表单相关
   /* form */
@@ -213,6 +203,20 @@ $(document).ready(function () {
       }
     })
   }
+
+
+  //常见问题交互
+  $('#JqaList .item').on('click',function(){
+    $(this).find('.answer').toggle();
+  })
+
+
+  //查看更多  列表假加载
+  $('.loadmore').bind('click',function() {
+    var $bindList = $('#'+$(this).data('bindlist'))
+    $bindList.find('.item').removeClass('hide');
+    $(this).hide();
+  })
 });
 
 

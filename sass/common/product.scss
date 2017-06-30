@@ -94,7 +94,7 @@
 }
 
 .weui-tab-prod {
-  padding-bottom: 50px;
+  // padding-bottom: 50px;
 }
 
 .box-2 {
@@ -299,9 +299,10 @@
 
 .weui-tab-prod .weui-tab__content {
   .content-wrap {
-    padding: 15px;
+    padding: 15px 0;
+    background-color: #fff;
     img {
-      width: 345px;
+      width: 375px;
       height: auto;
     }
   }

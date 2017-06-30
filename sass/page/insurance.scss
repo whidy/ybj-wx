@@ -117,3 +117,44 @@
     }
   }
 }
+
+
+//常见问题
+.qa-list {
+  padding-top:5px;
+  .item {
+    padding:15px;
+    display: flex;
+    border-bottom:1px solid $border-color;
+    .icon-wen {
+      font-size: 18px;
+      color: $primary-color;
+      // margin-right: 8px;
+      margin-top:-3px;
+      width:26px;
+    }
+    .txts {
+      // margin-left:26px;
+      flex:1;
+    }
+    .question {
+      font-size: 16px;
+      line-height: 24px;
+      // color: nth($text-color, 1);
+    }
+    .answer {
+      font-size: 14px;
+      line-height: 21px;
+      color: nth($text-color, 2);
+      margin-top:5px;
+    }
+  }
+}
+
+.loadmore {
+  padding:15px 0;
+  text-align: center;
+  color: nth($text-color, 3);
+  font-size: 16px;
+  line-height: 20px;
+}
