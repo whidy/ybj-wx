@@ -18,14 +18,14 @@
 }
 
 .top-entry {
-  border-bottom: 1px solid #ECECEC;
+  border-bottom: 1px solid #ECECEC; /*no*/
   display: flex;
   background-color: #fff;
   .item {
     width: 100%;
     display: block;
     padding: 16px 15px;
-    border-left: 1px solid #ECECEC;
+    border-left: 1px solid #ECECEC; /*no*/
     position: relative;
     &:first-child {
       border-left: 0;
@@ -138,7 +138,7 @@
   margin-top: 10px;
   padding: 0 15px 17px;
   background-color: #fff;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $border-color; /*no*/
   .hd {
     font-size: 14px;
     line-height: 24px;
@@ -177,7 +177,7 @@
   background-color: #F6F6F6;
   font-size: 16px;
   text-align: center;
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $border-color; /*no*/
   .icon-help {
     font-size: 18px;
     margin-left: 5px;
@@ -187,7 +187,7 @@
     font-size: 25px;
     padding: 0 15px;
     color: $primary-color;
-    border-right: 1px solid $border-color;
+    border-right: 1px solid $border-color; /*no*/
   }
   .weui-flex a {
     font-size: 18px;
@@ -208,7 +208,7 @@
   padding-bottom: 12px;
   &::after {
     content: '';
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $border-color; /*no*/
     display: block;
     margin-top: -12px;
   }

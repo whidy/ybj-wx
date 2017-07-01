@@ -49,7 +49,7 @@
     height: 40px;
     line-height: 40px;
     box-sizing: border-box;
-    border: 1px solid $border-color;
+    border: 1px solid $border-color; /*no*/
     text-align: center;
     color: nth($text-color, 2);
     float: left;
@@ -91,7 +91,7 @@
   .item {
     padding:15px;
     display: flex;
-    border-bottom:1px solid $border-color;
+    border-bottom:1px solid $border-color; /*no*/
     .icon-wen {
       font-size: 18px;
       color: $primary-color;

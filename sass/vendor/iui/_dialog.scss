@@ -57,7 +57,7 @@
     color: nth($dialog-color,1);
     font: $dialog-header-font;
     text-align: left;
-    border-bottom: 1px #e0e0e0 solid;
+    border-bottom: 1px #e0e0e0 solid; /*no*/
     padding: 10px 15px;
     position: relative;
 }
@@ -70,7 +70,7 @@
 }
 
 .IUI-dialog-footer {
-    border-top: 1px #e0e0e0 solid;
+    border-top: 1px #e0e0e0 solid; /*no*/
     text-align: right;
     padding: 10px 15px;
 }

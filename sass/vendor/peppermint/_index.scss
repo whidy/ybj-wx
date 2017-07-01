@@ -135,8 +135,8 @@
 .peppermint figure img {
     vertical-align: top;
     max-width: 100%;
-    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /*no*/
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /*no*/
 }
 
 .peppermint figure figcaption {
@@ -211,6 +211,6 @@ ul.peppermint-dots > li.peppermint-active-dot > span {
     margin: -6px 0 0 -6px;
     width: 10px;
     height: 10px;
-    border: 1px solid #9b9890;
+    border: 1px solid #9b9890; /*no*/
     background: transparent;
 }

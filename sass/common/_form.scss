@@ -1,7 +1,7 @@
 .form {
   .form-hd {
     padding: 20px 15px 10px;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $border-color; /*no*/
     span {
       border-left: 3px solid $primary-color;
       padding-left: 10px;
@@ -10,7 +10,7 @@
   }
   .form-bd {
     background-color: #fff; // padding: 0 15px;
-    border-bottom: 1px solid $border-color;
+    border-bottom: 1px solid $border-color; /*no*/
   }
   .form-ft {
     .btn {
@@ -22,7 +22,7 @@
 }
 
 .form-group {
-  border-top: 1px solid $border-color;
+  border-top: 1px solid $border-color; /*no*/
   height: 44px;
   font-size: 14px;
   margin: 0 15px;
@@ -159,7 +159,7 @@
 .form-group-tarea {
   height: auto;
   margin: 0;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $border-color; /*no*/
   .textarea-wrap {
     position: relative;
     padding: 10px 15px;
@@ -201,5 +201,5 @@
 .form-group-separate {
   height: 10px;
   background-color: $bg-color;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $border-color; /*no*/
 }

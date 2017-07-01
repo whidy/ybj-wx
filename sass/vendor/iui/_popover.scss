@@ -88,7 +88,7 @@
 .IUI-popover-container {
     width: 300px;
     background-color: #fff;
-    border: 1px #d9dadc solid;
+    border: 1px #d9dadc solid; /*no*/
     position: absolute;
     z-index: 999;
     border-radius: 5px;
@@ -144,7 +144,7 @@
         padding: 8px 14px;
         margin: 0;
         font-size: 14px;
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb; /*no*/
         border-radius: 5px 5px 0 0;
     }
     }

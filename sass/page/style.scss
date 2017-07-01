@@ -66,7 +66,7 @@ input[placeholder],
 }
 
 .weui-dialog__ft {
-  border-top: 1px solid #d2d3d5;
+  border-top: 1px solid #d2d3d5; /*no*/
   height: 50px;
   line-height: 50px;
   .weui-dialog__btn_primary {
@@ -82,7 +82,7 @@ input[placeholder],
   .avatar {
     width: 40px;
     height: 40px;
-    border: 1px solid #b4b4b4;
+    border: 1px solid #b4b4b4; /*no*/
     border-radius: 16px;
   }
   .editable .weui-cell__ft:after {
@@ -101,11 +101,11 @@ input[placeholder],
     height: 50px;
     line-height: 50px;
     text-align: center;
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #E5E5E5; /*no*/ /*no*/
     background-color: #fff;
     li {
       padding: 0 15px;
-      border-right: 1px solid #e5e5e5;
+      border-right: 1px solid #e5e5e5; /*no*/
       &:last-child {
         border-right: 0;
       }
@@ -213,7 +213,7 @@ input[placeholder],
 
 .order-cells {
   background-color: #fff;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5; /*no*/
   margin-top: 15px;
   .cell {
     //各种左侧边框颜色样式
@@ -293,7 +293,7 @@ input[placeholder],
     &::before {
       content: '';
       width: 100px;
-      border-top: 1px solid #c7c7c7;
+      border-top: 1px solid #c7c7c7; /*no*/
       display: block;
       margin: -13px auto;
     }
@@ -335,7 +335,7 @@ input[placeholder],
       text-align: center;
       float: right;
       box-sizing: border-box;
-      border: 1px solid #e8382f;
+      border: 1px solid #e8382f; /*no*/
       border-radius: 4px;
       color: #e8382f;
     }
@@ -343,7 +343,7 @@ input[placeholder],
 }
 
 .btm-tips {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5; /*no*/
   text-align: center;
   margin: 38px 45px 0;
   height: 15px;
