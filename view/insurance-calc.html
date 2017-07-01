@@ -26,40 +26,103 @@
         </div>
       </a>
     </div>
-    <div class="form" id="Jform" action="">
+    <div class="form form-calc" id="JformCalc">
       <div class="form-hd"><span>输入信息，测算保费</span></div>
       <div class="form-bd">
-        <div class="form-group form-group-radio">
+        <div class="form-group form-group-radio weui-cells_radio">
           <div class="form-group__hd">
-            <label for="sex">性别</label>
+            <label class="form-label">性别</label>
           </div>
-          <div class="form-group_bd">
-            <div class="radio"><input required="" type="radio" class="weui-check" name="sex" value="male" id="r1" tips="请选择性别">男</div>
-            <div class="radio"><input required="" type="radio" class="weui-check" name="sex" value="female" id="r2" tips="请选择性别">女</div>
+          <div class="form-group__bd">
+            <label class="weui-check__label" for="r1"><div class="radio"><input required type="radio" class="weui-check" name="sex" value="male" id="r1" tips="请选择性别"><span class="weui-icon-checked"></span>男</div></label>
+            <label class="weui-check__label" for="r2"><div class="radio"><input required type="radio" class="weui-check" name="sex" value="female" id="r2" tips="请选择性别"><span class="weui-icon-checked"></span>女</div></label>
+          </div>
+          <div class="form-group__ft"></div>
+        </div>
+        <div class="form-group form-group-picker" id="datePickerBtn">
+          <div class="form-group__hd">
+            <label class="form-label">年龄</label>
+          </div>
+          <div class="form-group__bd">
+            <input type="hidden" name="age" required value="" tips="请选择年龄">
+            <!--<input id="datePickerBtn">-->
+          </div>
+          <div class="form-group__ft"><span class="picker-value"></span></div>
+        </div>
+        <div class="form-group form-group-select">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <select class="form-control" name="bzqx" required tips="保障期限">
+              <option value="" disabled selected>保障期限</option>
+              <option value="至100周岁">至100周岁</option>
+              <option value="至70周岁">至70周岁</option>
+              <option value="30年">30年</option>
+              <option value="20年">20年</option>
+              <option value="10年">10年</option>
+            </select>
           </div>
           <div class="form-group__ft"></div>
         </div>
         <div class="form-group form-group-select">
-          <div class="form-group__hd">
-            <label for="sex">年龄</label>
-          </div>
-          <div class="form-group_bd">
-            <input class="weui-input" type="date" value="">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <select class="form-control" name="jfqx" required tips="缴费期限">
+              <option value="" disabled selected>缴费期限</option>
+              <option value="至70周岁">至70周岁</option>
+              <option value="30年">30年</option>
+              <option value="20年">20年</option>
+              <option value="10年">10年</option>
+              <option value="10年">1次性缴清</option>
+            </select>
           </div>
           <div class="form-group__ft"></div>
         </div>
         <div class="form-group form-group-select">
-          <select class="form-control" name="contacttype" required tips="请选择保障类型">
-            <option value="" disabled selected>请选择保障类型</option>
-            <option value="意外保险">意外保险</option>
-            <option value="重疾保险">重疾保险</option>
-            <option value="寿险">寿险</option>
-            <option value="其他blabla">其他blabla</option>
-          </select>
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <select class="form-control" name="jffs" required tips="缴费方式">
+              <option value="" disabled selected>缴费方式</option>
+              <option value="年缴">年缴</option>
+              <option value="半年缴">半年缴</option>
+              <option value="季缴">季缴</option>
+              <option value="月缴">月缴</option>
+            </select>
+          </div>
+          <div class="form-group__ft"></div>
+        </div>
+        <div class="form-group form-group-select">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <select class="form-control" name="bzed" required tips="保障额度">
+              <option value="" disabled selected>保障额度</option>
+              <option value="10万元">10万元</option>
+              <option value="30万元">30万元</option>
+              <option value="50万元">50万元</option>
+            </select>
+          </div>
+          <div class="form-group__ft"></div>
+        </div>
+        <!--产品如果是手动输入则用下面的-->
+        <!--<div class="form-group">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <input type="text" class="form-control" name="bzed" maxlength="5" required pattern="REG_BZED" placeholder="保障额度（单位：万元）"
+              emptyTips="请输入保障额度" notMatchTips="请输入正确的保障额度" value="">
+          </div>
+          <div class="form-group__ft"></div>
+        </div>-->
+        <div class="form-group">
+          <div class="form-group__hd"><label class="form-label">保费</label></div>
+          <div class="form-group__bd">
+            <input type="text" value="0" name="result" id="result" class="result ta-r">
+          </div>
+          <div class="form-group__ft"><span>元</span></div>
         </div>
       </div>
       <div class="form-ft">
-        <a href="javascript:;" class="btn btn-okay" id="JsubmitConsult">马上预约</a>
+        <div class="btm-fixed">
+          <div class="weui-flex"><a href="./insurance-consult-a.html" class="weui-flex__item">预约咨询</a><a href="javascript:;" class="weui-flex__item" id="Jcalc">保费计算</a></div>
+        </div>
       </div>
     </div>
   </div>

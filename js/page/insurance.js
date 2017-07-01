@@ -58,7 +58,7 @@ $(document).ready(function () {
     '<a href="javascript:;" class="btn btn-okay">确定</a>' +
     '</div>' +
     '</div>' +
-    '<div class="asking">' +
+    '<div class="btm-fixed">' +
     '<a href="./insurance-consult-b.html" class="fs-16">请专业顾问帮忙<i class="icon iconfont-prod icon-help"></i></span>' +
     '</div>' +
     '</div>' +
@@ -89,10 +89,10 @@ $(document).ready(function () {
     })
     if (!$(ele).data('help')) {
       $('#JinsuranceFilterSwipe').find('.insurance-filter').height('auto');
-      $('#JinsuranceFilterSwipe').find('.asking').hide();
+      $('#JinsuranceFilterSwipe').find('.btm-fixed').hide();
     } else {
       $('#JinsuranceFilterSwipe').find('.insurance-filter').removeAttr('style');
-      $('#JinsuranceFilterSwipe').find('.asking').show();
+      $('#JinsuranceFilterSwipe').find('.btm-fixed').show();
     }
   }
 
@@ -120,7 +120,7 @@ $(document).ready(function () {
         scrollTop: $('#insurContTab').offset().top
       }, 300);
       // console.log($('#insurContTab'));
-      
+
     }
   });
 
@@ -166,27 +166,89 @@ $(document).ready(function () {
         }
       }, regexp);
     });
+  }
 
+  //咨询提交
+  function result(iconClassName, txts, type) {
+    var $resultDiv = $('<div class="result-page"></div>');
+    $resultDiv.append('<i class="icon iconfont-prod ' + iconClassName + '"></i><p class="txts">' + txts + '</p>');
 
-    function result(iconClassName, txts, type) {
-      var $resultDiv = $('<div class="result-page"></div>');
-      $resultDiv.append('<i class="icon iconfont-prod ' + iconClassName + '"></i><p class="txts">' + txts + '</p>');
+    //判断来自保险还是贷款
+    var isInsurance = true,
+      jumpToUrl = '保险列表页';
+    isInsurance ? jumpToUrl = '保险列表页' : jumpToUrl = '贷款列表页';
+    $resultDiv.append('<a href="' + jumpToUrl + '" class="btn btn-okay btn-medium">查看更多产品</a>');
 
-      //判断来自保险还是贷款
-      var isInsurance = true,
-        jumpToUrl = '保险列表页';
-      isInsurance ? jumpToUrl = '保险列表页' : jumpToUrl = '贷款列表页';
-      $resultDiv.append('<a href="' + jumpToUrl + '" class="btn btn-okay btn-medium">查看更多产品</a>');
-
-      if (type == 'noprod') {
-        $('body').css({ 'background-color': '#fff', 'padding-top': '82px' });
-        $('#container').html($resultDiv);
-      } else {
-        $('#Jform .form-ft').hide();
-        $('#Jform .form-bd').html($resultDiv);
-      }
+    if (type == 'noprod') {
+      $('body').css({ 'background-color': '#fff', 'padding-top': '82px' });
+      $('#container').html($resultDiv);
+    } else {
+      $('#Jform .form-ft').hide();
+      $('#Jform .form-bd').html($resultDiv);
     }
+  }
 
+  //计算保单费用
+  if ($('#JformCalc').length) {
+    //https://github.com/weui/weui.js/blob/master/docs/component/picker.md#datePicker
+    $('#datePickerBtn').bind('click', function () {
+      weui.datePicker({
+        start: 1990,
+        end: 2000,
+        defaultValue: [1991, 6, 9],
+        onChange: function (result) {
+          // console.log(result);
+        },
+        onConfirm: function (result) {
+          // console.log(result);
+          $('#datePickerBtn input').val(result);
+          $('#datePickerBtn .picker-value').text(result[0].label+result[1].label+result[2].label);
+        },
+        id: 'datePicker'
+      });
+    })
+    // 约定正则
+    var regexp = {
+      regexp: {
+        NAME: /^([\u4e00-\u9fa5\·]{2,10})$/,
+        MOBILE: /^\d{11}$/,
+        BZED: /^\d{5}$/
+      }
+    };
+    // 表单提交
+    document.querySelector('#Jcalc').addEventListener('click', function () {
+      var dataArr = [], resultNum;
+      var sex = document.querySelector('input[type=radio]:checked'),
+        age = document.querySelector('input[name=age]'),
+        bzqx = document.querySelector('select[name=bzqx]'),
+        jfqx = document.querySelector('select[name=jfqx]'),
+        jffs = document.querySelector('select[name=jffs]'),
+        bzed = document.querySelector('select[name=bzed]'),
+        resultEl = document.getElementById('result');
+      dataArr = [sex, age, bzqx, jfqx, jffs, bzed];
+      if (this.text == '保费计算') {
+        weui.form.validate('#JformCalc', function (error) {
+          // console.log(error);
+          if (!error) {
+
+            //计算公式
+            resultNum = 1000000;
+            resultEl.value = resultNum;
+            $('#Jcalc').text('重新计算');
+          }
+        }, regexp);
+      } else {
+        sex.checked = false;
+        age.value = '';
+        bzqx.value = '';
+        jfqx.value = '';
+        jffs.value = '';
+        bzed.value = '';
+        resultEl.value = 0;
+        $('.picker-value').text('');
+        $('#Jcalc').text('保费计算');
+      }
+    });
   }
 
   // 保险分类导航跟随屏幕滚动
@@ -206,14 +268,14 @@ $(document).ready(function () {
 
 
   //常见问题交互
-  $('#JqaList .item').on('click',function(){
+  $('#JqaList .item').on('click', function () {
     $(this).find('.answer').toggle();
   })
 
 
   //查看更多  列表假加载
-  $('.loadmore').bind('click',function() {
-    var $bindList = $('#'+$(this).data('bindlist'))
+  $('.loadmore').bind('click', function () {
+    var $bindList = $('#' + $(this).data('bindlist'))
     $bindList.find('.item').removeClass('hide');
     $(this).hide();
   })
