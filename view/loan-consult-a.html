@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="black" name="apple-mobile-web-app-status-bar-style">
+  <meta content="telephone=no" name="format-detection">
+  <meta content="email=no" name="format-detection">
+  <link rel="stylesheet" type="text/css" href="/dist/loan.css">
+  <title>预约贷款</title>
+  <script>
+    var prodId = '000'; //开发传ID.这个是没有产品的就为空
+  </script>
+</head>
+
+<body>
+  <div class="container" id="container">
+    <div class="prod-summary">
+      <a href="./loan-detail.html">
+        <img src="//lorempixel.com/150/78" alt="" class="fl">
+        <div class="txts fl">
+          <p class="name">平安普惠消费贷</p>
+          <div class="tags"><span class="tagname tagcolor-1">审批飞快</span><span class="tagname tagcolor-2">贷款额度巨大</span><span class="tagname tagcolor-3">高额满期金</span><span class="tagname tagcolor-4">不用贴息</span></div>
+        </div>
+      </a>
+    </div>
+    <div class="form" id="Jform" action="" data-type="create">
+      <div class="form-hd"><span>简单申请，对接专业机构</span></div>
+      <div class="form-bd">
+        <div class="form-group">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <input type="text" class="form-control" name="nickname" maxlength="10" required pattern="REG_NICKNAME" placeholder="称呼" emptyTips="请输入称呼"
+              notMatchTips="请输入正确的称呼" value="小白">
+          </div>
+          <div class="form-group__ft"></div>
+        </div>
+        <div class="form-group">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <input type="tel" class="form-control" name="money" maxlength="8" required pattern="REG_SQJE" placeholder="申请金额" emptyTips="请输入申请金额"
+              notMatchTips="请输入正确的申请金额" value="">
+          </div>
+          <div class="form-group__ft"><span>元</span></div>
+        </div>
+        <div class="form-group">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <input type="tel" class="form-control" name="mobile" maxlength="11" required pattern="REG_MOBILE" placeholder="手机号" emptyTips="请输入手机号"
+              notMatchTips="请输入正确的手机号" value="18680222005">
+          </div>
+          <div class="form-group__ft"></div>
+        </div>
+        <div class="form-group">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
+            <input type="tel" class="form-control" name="vcode" maxlength="11" required pattern="REG_VCODE" placeholder="验证码" emptyTips="请输入验证码"
+              notMatchTips="请输入正确的验证码" value="">
+          </div>
+          <div class="form-group__ft"><a href="javascript:;" class="btn btn-info getVcode" data-action="${contextPath}/userFront/genVerificationCode">获取验证码</a></div>
+        </div>
+      </div>
+      <div class="form-ft">
+        <a href="javascript:;" class="btn btn-okay" id="JsubmitForm">立即申请</a>
+      </div>
+    </div>
+  </div>
+  <script src="/dist/loan.js"></script>
+</body>
+
+</html>

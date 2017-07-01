@@ -1,0 +1,32 @@
+@import '../common/configuration';
+@import '../browser/reset';
+@import '../vendor/swiper';
+@import '../vendor/weui';
+@import '../common/iconfont-product';
+@import '../common/product';
+@import '../common/consult';
+@import '../common/btn';
+
+.apply-step {
+  padding:15px;
+  background-color: #fff;
+  text-align: center;
+  border-bottom: 1px solid $border-color;
+  .icon {
+    font-size: 26px;
+    line-height: 26px;
+    color: #566B78;
+  }
+  p {
+    font-size: 13px;
+    line-height: 21px;
+  }
+}
+
+.form-help {
+  .form-hd {
+    padding:0;
+    border:0;
+  }
+  
+}

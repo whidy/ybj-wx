@@ -39,3 +39,12 @@
   background-color: $primary-color;
   color: #fff;
 }
+
+.btn-info {
+  width: 95px;
+  height: 25px;
+  line-height: 25px;
+  border:1px solid $primary-color;
+  color: $primary-color;
+  font-size: 12px;
+}

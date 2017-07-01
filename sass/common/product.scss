@@ -17,15 +17,53 @@
   }
 }
 
+.top-entry {
+  border-bottom: 1px solid #ECECEC;
+  display: flex;
+  background-color: #fff;
+  .item {
+    width: 100%;
+    display: block;
+    padding: 16px 15px;
+    border-left: 1px solid #ECECEC;
+    position: relative;
+    &:first-child {
+      border-left: 0;
+    }
+    i {
+      position: absolute;
+      right: 15px;
+      top: 20px;
+    }
+  }
+  .title {
+    width: 110px;
+    font-size: 14px;
+    height: 21px;
+    line-height: 21px;
+    color: #333;
+    display: block;
+  }
+  .title-sub {
+    color: #999;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    margin-top: 5px;
+    display: block;
+  }
+}
+
 //产品列表样式
 .prod-list {
   width: 355px;
   margin: 0 auto;
-  li {
+  .item {
     background-color: #fff;
     width: 355px;
     height: 218px;
     border-radius: 5px;
+    margin-top:10px;
     overflow: hidden;
     .img-wrap {
       position: relative;
@@ -65,11 +103,10 @@
         &::before {
           margin-right: 3px;
         }
-        &::after {
-          content: '起';
+        em {
           font-size: 12px;
           color: #BEBEBE;
-          padding-left: 3px;
+          padding:0 3px;
         }
       }
       .txt-sub {
@@ -210,9 +247,6 @@
     line-height: 14px;
   }
 }
-
-
-
 
 //滑动层帮你选
 .insurance-filter-swipe {

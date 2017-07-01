@@ -6,6 +6,27 @@ var $ = require('../lib/jquery-3.2.1.js');
 var isLogin = require('../common/isLogin.js'); //理论上是布尔值
 var queryParamVal = require('../common/queryParamVal.js');
 
+
+//咨询提交
+function resultPage(config) {
+  var $resultDiv = $('<div class="result-page"></div>');
+  $resultDiv.append('<i class="icon iconfont-prod ' + config.iconClassName + '"></i><p class="txts">' + config.txts + '</p>');
+
+  //判断来自保险还是贷款
+  var isInsurance = config.type,
+    jumpToUrl = './insurance-list.html';
+  isInsurance == 'insurance' ? jumpToUrl = './insurance-list.html' : jumpToUrl = './loan-index.html';
+  $resultDiv.append('<a href="' + jumpToUrl + '" class="btn btn-okay btn-medium">查看更多产品</a>');
+
+  if (config.isProd == 'noprod') {
+    $('body').css({ 'background-color': '#fff', 'padding-top': '82px' });
+    $('#container').html($resultDiv);
+  } else {
+    $('#Jform .form-ft').hide();
+    $('#Jform .form-bd').html($resultDiv);
+  }
+}
+
 $(document).ready(function () {
   //顶部焦点图
   var hasPagination = $('.swiper-container .swiper-slide').length > 1 ? '.swiper-pagination' : '';
@@ -144,12 +165,12 @@ $(document).ready(function () {
     // 约定正则
     var regexp = {
       regexp: {
-        NAME: /^([\u4e00-\u9fa5\·]{2,10})$/,
+        NICKNAME: /^([\u4e00-\u9fa5\·]{2,10})$/,
         MOBILE: /^\d{11}$/
       }
     };
     // 表单提交
-    document.querySelector('#JsubmitConsult').addEventListener('click', function () {
+    document.querySelector('#JsubmitForm').addEventListener('click', function () {
       weui.form.validate('#Jform', function (error) {
         // console.log(error);
         if (!error) {
@@ -161,31 +182,16 @@ $(document).ready(function () {
             loading.hide();
             // weui.toast('提交成功', 3000);
             //成功后的修改
-            result('icon-zhengque', '你的咨询预约已成功提交</br>专业顾问将很快与你联系，请保持手机通话顺畅！', isProd);
+            resultPage({
+              'iconClassName': 'icon-zhengque',
+              'txts': '你的咨询预约已成功提交</br>专业顾问将很快与你联系，请保持手机通话顺畅！',
+              'isProd': isProd,
+              'type': 'insurance'
+            });
           }, 1500);
         }
       }, regexp);
     });
-  }
-
-  //咨询提交
-  function result(iconClassName, txts, type) {
-    var $resultDiv = $('<div class="result-page"></div>');
-    $resultDiv.append('<i class="icon iconfont-prod ' + iconClassName + '"></i><p class="txts">' + txts + '</p>');
-
-    //判断来自保险还是贷款
-    var isInsurance = true,
-      jumpToUrl = '保险列表页';
-    isInsurance ? jumpToUrl = '保险列表页' : jumpToUrl = '贷款列表页';
-    $resultDiv.append('<a href="' + jumpToUrl + '" class="btn btn-okay btn-medium">查看更多产品</a>');
-
-    if (type == 'noprod') {
-      $('body').css({ 'background-color': '#fff', 'padding-top': '82px' });
-      $('#container').html($resultDiv);
-    } else {
-      $('#Jform .form-ft').hide();
-      $('#Jform .form-bd').html($resultDiv);
-    }
   }
 
   //计算保单费用
@@ -210,7 +216,7 @@ $(document).ready(function () {
     // 约定正则
     var regexp = {
       regexp: {
-        NAME: /^([\u4e00-\u9fa5\·]{2,10})$/,
+        NICKNAME: /^([\u4e00-\u9fa5\·]{2,10})$/,
         MOBILE: /^\d{11}$/,
         BZED: /^\d{5}$/
       }

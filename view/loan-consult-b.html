@@ -8,8 +8,8 @@
   <meta content="black" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
   <meta content="email=no" name="format-detection">
-  <link rel="stylesheet" type="text/css" href="/dist/insurance.css">
-  <title>预约咨询</title>
+  <link rel="stylesheet" type="text/css" href="/dist/loan.css">
+  <title>预约贷款</title>
   <script>
     var prodId = ''; //开发传ID.这个是没有产品的就为空
   </script>
@@ -18,11 +18,7 @@
 <body>
   <div class="container" id="container">
     <!--<div class="result-page"><i class="icon iconfont-prod icon-zhengque"></i><p class="txts">你的咨询预约已成功提交<br>专业顾问将很快与你联系，请保持手机通话顺畅！</p><a href="#" class="btn btn-okay">查看更多产品</a></div>-->
-    <div class="head-title">
-      <i class="icon iconfont-prod icon-yuyue"></i>
-      <p>快速预约，一对一专业解答</p>
-    </div>
-    <div class="form" id="Jform" action="">
+    <div class="form mt-16" id="Jform" action="" data-type="create">
       <div class="form-hd" style="padding:0;"></div>
       <div class="form-bd">
         <div class="form-group">
@@ -36,39 +32,30 @@
         <div class="form-group">
           <div class="form-group__hd"></div>
           <div class="form-group__bd">
+            <input type="tel" class="form-control" name="money" maxlength="8" required pattern="REG_SQJE" placeholder="申请金额" emptyTips="请输入申请金额"
+              notMatchTips="请输入正确的申请金额" value="">
+          </div>
+          <div class="form-group__ft"><span>元</span></div>
+        </div>
+        <div class="form-group">
+          <div class="form-group__hd"></div>
+          <div class="form-group__bd">
             <input type="tel" class="form-control" name="mobile" maxlength="11" required pattern="REG_MOBILE" placeholder="手机号" emptyTips="请输入手机号"
               notMatchTips="请输入正确的手机号" value="18680222005">
           </div>
           <div class="form-group__ft"></div>
         </div>
-        <div class="form-group form-group-select">
+        <div class="form-group">
           <div class="form-group__hd"></div>
           <div class="form-group__bd">
-            <select class="form-control" name="contacttime" required tips="请选择你方便的联系时段">
-              <option value="" disabled selected>请选择你方便的联系时段</option>
-              <option value="上午8:00-12:00">上午8:00-12:00</option>
-              <option value="下午12:00-18:00">下午12:00-18:00</option>
-              <option value="下午18:00-23:00">下午18:00-23:00</option>
-            </select>
+            <input type="tel" class="form-control" name="vcode" maxlength="11" required pattern="REG_VCODE" placeholder="验证码" emptyTips="请输入验证码"
+              notMatchTips="请输入正确的验证码" value="">
           </div>
-          <div class="form-group__ft"></div>
-        </div>
-        <div class="form-group form-group-select">
-          <div class="form-group__hd"></div>
-          <div class="form-group__bd">
-            <select class="form-control" name="contacttype" required tips="请选择保障类型">
-              <option value="" disabled selected>请选择保障类型</option>
-              <option value="意外保险">意外保险</option>
-              <option value="重疾保险">重疾保险</option>
-              <option value="寿险">寿险</option>
-              <option value="其他blabla">其他blabla</option>
-            </select>
-          </div>
-          <div class="form-group__ft"></div>
+          <div class="form-group__ft"><a href="javascript:;" class="btn btn-info getVcode" data-action="${contextPath}/userFront/genVerificationCode">获取验证码</a></div>
         </div>
       </div>
       <div class="form-ft">
-        <a href="javascript:;" class="btn btn-okay" id="JsubmitForm">马上预约</a>
+        <a href="javascript:;" class="btn btn-okay" id="JsubmitForm">立即申请</a>
       </div>
     </div>
   </div>
@@ -76,7 +63,7 @@
     <i class="icon iconfont-prod icon-zhengque"></i>
     <p class="txts">你的咨询预约已成功提交</br>专业顾问将很快与你联系，请保持手机通话顺畅！</p>
   </div>-->
-  <script src="/dist/insurance.js"></script>
+  <script src="/dist/loan.js"></script>
 </body>
 
 </html>
