@@ -1,5 +1,5 @@
 require('../../sass/page/insurance.scss');
-require('../lib/rootFontSizeAdjust.js');
+// require('../lib/rootFontSizeAdjust.js');
 require('swiper');
 var weui = require('../lib/weui.js');
 var $ = require('../lib/jquery-3.2.1.js');
@@ -98,15 +98,22 @@ $(document).ready(function () {
   })
 
   function swipeLayerShow(ele) {
-    // console.log(ele);
-    $('#JinsuranceFilterSwipe').addClass('insurance-filter-swipe-show');
+    // alert($(window).height());
+    // alert(window.innerHeight);
     $('body').css({
       'height': $(window).height(),
       'overflow': 'hidden'
     })
+    $('#JinsuranceFilterSwipe').show(0, function () {
+      $(this).addClass('insurance-filter-swipe-show');
+    })
+
     $('.insurance-filter .btn-cancel').bind('click', function () {
-      $('.insurance-filter-swipe').removeClass('insurance-filter-swipe-show');
       $('body').removeAttr('style');
+      $('.insurance-filter-swipe').removeClass('insurance-filter-swipe-show');
+      setTimeout(function() {
+        $('.insurance-filter-swipe').hide();
+      }, 500);
     })
     if (!$(ele).data('help')) {
       $('#JinsuranceFilterSwipe').find('.insurance-filter').height('auto');
@@ -208,7 +215,7 @@ $(document).ready(function () {
         onConfirm: function (result) {
           // console.log(result);
           $('#datePickerBtn input').val(result);
-          $('#datePickerBtn .picker-value').text(result[0].label+result[1].label+result[2].label);
+          $('#datePickerBtn .picker-value').text(result[0].label + result[1].label + result[2].label);
         },
         id: 'datePicker'
       });

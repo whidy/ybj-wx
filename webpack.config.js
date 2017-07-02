@@ -27,7 +27,7 @@ var config = {
             }, {
               loader: "px2rem-loader",
               options: {
-                remUnit: 10
+                remUnit: 37.5
               }
             }, {
               loader: 'postcss-loader'
