@@ -5,7 +5,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var px2rem = require('postcss-px2rem');
-
+var extractCSS = new ExtractTextPlugin('[name]-css.css');
+var extractSCSS = new ExtractTextPlugin('[name]-scss.css');
 var config = {
   entry: {
     common: './js/index.js',
@@ -63,7 +64,8 @@ var config = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(),
-    new ExtractTextPlugin("[name].css"),
+    extractCSS,
+    extractSCSS,
     new CleanWebpackPlugin(['dist'])
   ],
   devServer: {

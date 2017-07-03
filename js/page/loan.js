@@ -1,4 +1,7 @@
+require('../../sass/vendor/weui.css');
+require('../../sass/vendor/swiper.css');
 require('../../sass/page/loan.scss');
+
 require('swiper');
 var weui = require('../lib/weui.js');
 var $ = require('../lib/jquery-3.2.1.js');

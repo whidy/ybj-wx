@@ -1,7 +1,6 @@
 require('../../sass/vendor/weui.css');
 require('../../sass/vendor/swiper.css');
 require('../../sass/page/insurance.scss');
-require('../../sass/browser/_reset.scss');
 
 require('swiper');
 var weui = require('../lib/weui.js');
@@ -114,12 +113,12 @@ $(document).ready(function () {
     $('.insurance-filter .btn-cancel').bind('click', function () {
       $('body').removeAttr('style');
       $('.insurance-filter-swipe').removeClass('insurance-filter-swipe-show');
-      setTimeout(function() {
+      setTimeout(function () {
         $('.insurance-filter-swipe').hide();
       }, 500);
     })
     if (!$(ele).data('help')) {
-      $('#JinsuranceFilterSwipe').find('.insurance-filter').height('auto');
+      $('#JinsuranceFilterSwipe').find('.insurance-filter').css('padding-bottom', '0');
       $('#JinsuranceFilterSwipe').find('.btm-fixed').hide();
     } else {
       $('#JinsuranceFilterSwipe').find('.insurance-filter').removeAttr('style');

@@ -126,8 +126,7 @@
     background: url(../../images/radio-a.png) no-repeat 0 0;
     background-size: contain;
     display: inline-block;
-    margin-right: 20px;
-    // vertical-align: sub;
+    margin-right: 20px; // vertical-align: sub;
     &::before {
       margin: 0;
       content: '';
@@ -138,7 +137,7 @@
   }
 }
 
-.weui-cells_radio .weui-check:checked+.weui-icon-checked:before {
+.container .weui-cells_radio .weui-check:checked+.weui-icon-checked:before {
   width: 32px;
   height: 32px;
   color: transparent;
@@ -148,17 +147,28 @@
   background-size: contain;
 }
 
-// .weui-picker {
-//   .weui-picker__indicator {
-//     height: 34px;
-//   }
-//   .weui-picker__item {
-//     font-size: 28px;
-//     height: 34px;
-//     line-height: 34px;
-//     padding: 0;
-//   }
-// }
+body .weui-picker {
+  .weui-picker__mask {
+    background-size: 100% 204px;
+  }
+  .weui-picker__bd {
+    height: 476px;
+    /*no*/
+  }
+  .weui-picker__indicator {
+    height: 68px;
+    /*no*/
+    top: 204px;
+    /*no*/
+  }
+  .weui-picker__item {
+    font-size: 28px;
+    /*no*/
+    line-height: 68px;
+    /*no*/
+    padding: 0;
+  }
+}
 
 .form-group-tarea {
   height: auto;
