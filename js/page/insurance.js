@@ -116,7 +116,7 @@ $(document).ready(function () {
       }, 500);
     })
     if (!$(ele).data('help')) {
-      $('#JinsuranceFilterSwipe').find('.insurance-filter').height('auto');
+      $('#JinsuranceFilterSwipe').find('.insurance-filter').css('padding-bottom','0');
       $('#JinsuranceFilterSwipe').find('.btm-fixed').hide();
     } else {
       $('#JinsuranceFilterSwipe').find('.insurance-filter').removeAttr('style');
