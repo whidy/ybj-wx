@@ -1,7 +1,7 @@
 .btn-wrap {
   display: flex;
-  padding: 0 15px 15px;
-  margin-top: 5px;
+  padding: 0 30px 30px;
+  margin-top: 10px;
   .btn {
     flex: 1;
     &:first-child {
@@ -11,19 +11,19 @@
 }
 
 .btn {
-  height: 40px;
-  line-height: 40px;
-  width: 167.5px;
-  margin-left: 10px;
-  border-radius: 3px;
+  height: 80px;
+  line-height: 80px;
+  width: 335px;
+  margin-left: 20px;
+  border-radius: 6px;
   text-align: center;
-  font-size: 18px;
+  font-size: 36px;
   border: 0;
   display: inline-block;
 }
 
 .btn-medium {
-  width: 168px;
+  width: 335px;
 }
 
 .weui-btn:not(.btn-disable):active {
@@ -41,10 +41,10 @@
 }
 
 .btn-info {
-  width: 95px;
-  height: 25px;
-  line-height: 25px;
-  border:1px solid $primary-color; /*no*/
+  width: 190px;
+  height: 50px;
+  line-height: 50px;
+  border:2px solid $primary-color; /*no*/
   color: $primary-color;
-  font-size: 12px;
+  font-size: 24px;
 }

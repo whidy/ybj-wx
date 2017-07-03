@@ -2,17 +2,17 @@
 .head-title {
   background-color: #fff;
   text-align: center;
-  padding: 34px 0 28px;
+  padding: 68px 0 56px;
   p {
-    font-size: 16px;
+    font-size: 32px;
     color: nth($text-color, 4)
   }
 }
 
 .icon-yuyue {
-  font-size: 44px;
-  line-height: 44px;
-  margin-bottom: 18px;
+  font-size: 88px;
+  line-height: 88px;
+  margin-bottom: 36px;
   display: block;
   &::before {
     color: $primary-color;
@@ -23,31 +23,31 @@
 
 .prod-summary {
   // height: 118px;
-  padding: 20px 15px;
+  padding: 40px 30px;
   overflow: hidden;
   background-color: #fff;
   display: flex;
-  border-bottom: 1px solid $border-color; /*no*/
+  border-bottom: 2px solid $border-color; /*no*/
   img {
-    margin-right: 10px;
-    width: 150px;
-    height: 78px;
+    margin-right: 20px;
+    width: 300px;
+    height: 156px;
   }
   .txts {
     flex: 1;
-    width: 185px;
+    width: 370px;
     .name {
-      font-size: 16px;
-      line-height: 18px;
+      font-size: 32px;
+      line-height: 36px;
     }
     .tagname {
-      padding: 0 9px 2px;
-      height: 20px;
-      line-height: 18px;
-      border: 1px solid transparent; /*no*/
-      font-size: 11px;
-      border-radius: 3px;
-      margin: 10px 10px 0 0;
+      padding: 0 18px 4px;
+      height: 40px;
+      line-height: 36px;
+      border: 2px solid transparent; /*no*/
+      font-size: 22px;
+      border-radius: 6px;
+      margin: 20px 20px 0 0;
       float: left;
       &.tagcolor-1 {
         color: $primary-color;
@@ -69,7 +69,7 @@
   }
 }
 
-.weui-toptips {
+.container .weui-toptips {
   display: none;
   position: fixed;
   -webkit-transform: translateZ(0);
@@ -77,10 +77,10 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 32px;
-  line-height: 32px;
-  padding: 0 15px;
-  font-size: 14px;
+  height: 64px;
+  line-height: 64px;
+  padding: 0 30px;
+  font-size: 28px;
   text-align: center;
   color: #fff;
   z-index: 5000;
@@ -88,19 +88,19 @@
   word-break: break-all
 }
 
-.weui-toptips_warn {
+.container .weui-toptips_warn {
   background-color: $primary-color;
 }
 
 // 显示结果区域
 .result-page {
   text-align: center;
-  padding: 36px 0;
+  padding: 72px 0;
   background-color: #fff;
   .icon {
-    font-size: 44px;
-    line-height: 44px;
-    margin-bottom: 20px;
+    font-size: 88px;
+    line-height: 88px;
+    margin-bottom: 40px;
     display: block;
   }
   .icon-zhengque {
@@ -110,11 +110,11 @@
     color: $primary-color;
   }
   .txts {
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 28px;
+    line-height: 44px;
     color: nth($text-color, 2);
   }
   .btn {
-    margin-top: 25px;
+    margin-top: 50px;
   }
 }

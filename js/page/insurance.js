@@ -1,5 +1,8 @@
+require('../../sass/vendor/weui.css');
+require('../../sass/vendor/swiper.css');
 require('../../sass/page/insurance.scss');
-// require('../lib/rootFontSizeAdjust.js');
+require('../../sass/browser/_reset.scss');
+
 require('swiper');
 var weui = require('../lib/weui.js');
 var $ = require('../lib/jquery-3.2.1.js');
@@ -80,7 +83,7 @@ $(document).ready(function () {
     '</div>' +
     '</div>' +
     '<div class="btm-fixed">' +
-    '<a href="./insurance-consult-b.html" class="fs-16">请专业顾问帮忙<i class="icon iconfont-prod icon-help"></i></span>' +
+    '<a href="./insurance-consult-b.html" class="fs-32">请专业顾问帮忙<i class="icon iconfont-prod icon-help"></i></span>' +
     '</div>' +
     '</div>' +
     '</div>';
@@ -208,7 +211,7 @@ $(document).ready(function () {
       weui.datePicker({
         start: 1990,
         end: 2000,
-        defaultValue: [1991, 6, 9],
+        defaultValue: [1990, 1, 1],
         onChange: function (result) {
           // console.log(result);
         },

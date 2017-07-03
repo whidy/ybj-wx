@@ -1,7 +1,7 @@
 @import '../common/configuration';
-@import '../browser/reset';
-@import '../vendor/swiper';
-@import '../vendor/weui';
+// @import '../browser/reset';
+// @import '../vendor/swiper';
+// @import '../vendor/weui';
 @import '../common/iconfont-product';
 @import '../common/product';
 @import '../common/consult';
@@ -12,8 +12,8 @@
 // 其他图
 .icon-zx,
 .icon-xz {
-  width: 34px;
-  height: 36px;
+  width: 68px;
+  height: 72px;
   float: right;
   background: url(../../images/zx.png) no-repeat 0 0;
   background-size: contain;
@@ -25,17 +25,17 @@
 
 //快速选保险
 .box {
-  padding: 15px;
-  margin-bottom: 10px;
+  padding: 30px;
+  margin-bottom: 20px;
   background-color: #fff;
   .hd {
-    margin: 9px 0 2px;
-    height: 15px;
-    line-height: 15px;
-    font-size: 15px;
+    margin: 18px 0 4px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 30px;
     color: nth($text-color, 4);
     .icon {
-      margin-right: 8px;
+      margin-right: 16px;
     }
   }
   .bd {
@@ -45,20 +45,20 @@
 
 .list-col-3 {
   li {
-    width: 108px;
-    height: 40px;
-    line-height: 40px;
+    width: 216px;
+    height: 80px;
+    line-height: 80px;
     box-sizing: border-box;
-    border: 1px solid $border-color; /*no*/
+    border: 2px solid $border-color; /*no*/
     text-align: center;
     color: nth($text-color, 2);
     float: left;
-    margin-right: 10.5px;
-    border-radius: 3px;
-    margin-top: 15px;
+    margin-right: 21px;
+    border-radius: 6px;
+    margin-top: 30px;
     overflow: hidden;
     a {
-      font-size: 14px;
+      font-size: 28px;
     }
     &:nth-child(3n) {
       margin-right: 0;
@@ -72,11 +72,11 @@
       &::after {
         content: '';
         position: absolute;
-        bottom: -12px;
+        bottom: -24px;
         right: 0;
         width: 0;
         height: 0;
-        border-width: 12px;
+        border-width:24px;
         border-style: solid;
         border-color: transparent $primary-color transparent transparent;
       }
@@ -87,42 +87,42 @@
 
 //常见问题
 .qa-list {
-  padding-top:5px;
+  padding-top:10px;
   .item {
-    padding:15px;
+    padding:30px;
     display: flex;
-    border-bottom:1px solid $border-color; /*no*/
+    border-bottom:2px solid $border-color; /*no*/
     .icon-wen {
-      font-size: 18px;
+      font-size: 36px;
       color: $primary-color;
       // margin-right: 8px;
-      margin-top:-3px;
-      width:26px;
+      margin-top:-6px;
+      width:52px;
     }
     .txts {
       // margin-left:26px;
       flex:1;
     }
     .question {
-      font-size: 16px;
-      line-height: 24px;
+      font-size: 32px;
+      line-height: 48px;
       // color: nth($text-color, 1);
     }
     .answer {
-      font-size: 14px;
-      line-height: 21px;
+      font-size: 28px;
+      line-height: 42px;
       color: nth($text-color, 2);
-      margin-top:5px;
+      margin-top:10px;
     }
   }
 }
 
 .loadmore {
-  padding:15px 0;
+  padding:30px 0;
   text-align: center;
   color: nth($text-color, 3);
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 32px;
+  line-height:40px;
 }
 
 
@@ -131,8 +131,8 @@
 .form-calc {
   .result {
     color: $primary-color;
-    font-size: 18px;
-    margin-right: 4px;
+    font-size: 36px;
+    margin-right:8px;
   }
 }
 
@@ -163,9 +163,9 @@
     bottom: 0;
     left: 0;
     // height: 84%;
-    padding-bottom:50px;
-    min-height: 480px;
-    max-height: 520px;
+    padding-bottom:100px;
+    min-height: 960px;
+    max-height: 1040px;
     overflow-y: auto;
   }
   &.insurance-filter-swipe-show {
@@ -176,13 +176,13 @@
 }
 
 .jswipelayershow {
-  width: 70px;
-  height: 45px;
-  line-height: 42px;
-  font-size: 16px;
+  width: 140px;
+  height: 90px;
+  line-height: 84px;
+  font-size: 32px;
   text-align: center;
-  margin-right: 10px;
+  margin-right: 20px;
   .icon-loud {
-    margin-left: 6px;
+    margin-left: 12px;
   }
 }

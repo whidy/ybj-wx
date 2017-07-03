@@ -19,6 +19,10 @@ var config = {
   module: {
     rules: [
       {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
+      },
+      {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -28,7 +32,7 @@ var config = {
             }, {
               loader: "px2rem-loader",
               options: {
-                remUnit: 37.5
+                remUnit: 75 //设计稿是750px
               }
             }, {
               loader: 'postcss-loader'
@@ -61,11 +65,6 @@ var config = {
     new webpack.optimize.UglifyJsPlugin(),
     new ExtractTextPlugin("[name].css"),
     new CleanWebpackPlugin(['dist'])
-    // new HtmlWebpackPlugin({
-    //   template: './src/index.html',
-    //   filename: 'index.html',
-    //   inject: 'body'
-    // })
   ],
   devServer: {
     contentBase: __dirname,

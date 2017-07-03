@@ -32,12 +32,12 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1.48573;
-	font-size: 14px;
+	font-size: 28px;
 	font-family: "Helvetica","PingFangSC-Regular","Microsoft YaHei","华文细黑" , "微软雅黑", Arial, STXihei,  SimSun;
 	-webkit-font-smoothing: antialiased;
 	color: #333;
-	background-color: $bg-color;
-	width: 375px;
+	background-color: #eee;
+	width: 750px;
 	margin:0 auto;
 }
 html {
@@ -72,7 +72,9 @@ table {
 	border-spacing: 0;
 }
 
-
+a:hover {
+	text-decoration: none!important;
+}
 .no-data{
 	background: #ECECEC;
 	border-radius: 3px;
@@ -82,28 +84,28 @@ table {
 	&:after{
 		content:'\e717';
 		font-family: 'iconfont';
-		font-size: 45px;
+		font-size: 90px;
 		color: #DCD0CF;
 		line-height: 1;
 		position: absolute;
-		width: 45px;
-    	height: 45px;
+		width: 90px;
+    	height: 90px;
     	top: 50%;
     	left: 50%;
-    	margin-left: -23px;
-    	margin-top: -23px;
+    	margin-left: -46px;
+    	margin-top: -46px;
 	}
 }
 
 
-.mt-10 {
-  margin-top: 10px;
+.mt-20 {
+  margin-top: 20px;
 }
-.mt-16 {
-  margin-top: 16px;
+.mt-32 {
+  margin-top: 32px;
 }
-.fs-16 {
-	font-size: 16px!important;
+.fs-32 {
+	font-size: 32px!important;
 }
 
 .fl {
@@ -116,7 +118,7 @@ table {
 
 .container {
   position: relative;
-	padding-bottom:50px;
+	padding-bottom:100px;
 }
 
 .hide {

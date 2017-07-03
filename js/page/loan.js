@@ -1,5 +1,4 @@
 require('../../sass/page/loan.scss');
-require('../lib/rootFontSizeAdjust.js');
 require('swiper');
 var weui = require('../lib/weui.js');
 var $ = require('../lib/jquery-3.2.1.js');
