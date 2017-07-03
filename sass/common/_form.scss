@@ -146,12 +146,16 @@
 }
 
 .weui-picker {
+  .weui-picker__bd {
+    height: 476px; /*no*/
+  }
   .weui-picker__indicator {
-    height: 34px;
+    height: 68px; /*no*/
+    top:204; /*no*/
   }
   .weui-picker__item {
-    font-size: 14px;
-    line-height: 34px;
+    font-size: 28px; /*no*/
+    line-height: 68px; /*no*/
     padding: 0;
   }
 }
